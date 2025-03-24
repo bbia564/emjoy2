@@ -7,6 +7,9 @@ import 'package:pixel_photo/pages/no_network/no_network_binding.dart';
 import 'package:pixel_photo/pages/no_network/no_network_view.dart';
 import 'package:pixel_photo/pages/pixel_add/pixel_add_binding.dart';
 import 'package:pixel_photo/pages/pixel_add/pixel_add_view.dart';
+import 'package:pixel_photo/pages/pixel_add/pixel_rule_config.dart';
+import 'package:pixel_photo/pages/pixel_coff/pixel_coff_binding.dart';
+import 'package:pixel_photo/pages/pixel_coff/pixel_coff_view.dart';
 import 'package:pixel_photo/pages/pixel_main/pixel_main_binding.dart';
 import 'package:pixel_photo/pages/pixel_main/pixel_main_view.dart';
 import 'package:pixel_photo/pages/pixel_setting/pixel_setting_binding.dart';
@@ -50,7 +53,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Pixels,
-      initialRoute: '/pixelMain',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -102,8 +105,10 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Pixels = [
+  GetPage(name: '/', page: () => const PixelCoffView(), binding: PixelCoffBinding()),
   GetPage(name: '/networkCheck', page: () => NoNetworkPage(), binding: NoNetworkBinding()),
   GetPage(name: '/pixelMain', page: () => const PixelMainPage(), binding: PixelMainBinding()),
+  GetPage(name: '/pixelRule', page: () => const PixelRuleConfig()),
   GetPage(name: '/pixelAdd', page: () => const PixelAddPage(), binding: PixelAddBinding()),
   GetPage(name: '/pixelSetting', page: () => PixelSettingPage(), binding: PixelSettingBinding()),
   GetPage(name: '/feedback', page: () => FeedbackPage(), binding: FeedbackBinding()),

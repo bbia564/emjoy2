@@ -11,8 +11,8 @@ class PixelCoffView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.effertz.value
-              ? const CircularProgressIndicator(color: Colors.purple)
+          () => controller.beier.value
+              ? const CircularProgressIndicator(color: Colors.pinkAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class PixelCoffView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.kwrviux();
+              controller.csdohtz();
             },
             icon: const Icon(
               Icons.restart_alt,
